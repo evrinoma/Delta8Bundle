@@ -1,0 +1,8 @@
+delta:
+  resource: "@EvrinomaDelta8Bundle/Resources/config/routing/default.yml"
+  prefix: evrinoma
+
+deltaapi:
+  resource: "@EvrinomaDelta8Bundle/Resources/config/routing/api.yml"
+  prefix: evrinoma
+

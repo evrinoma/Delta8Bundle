@@ -1,0 +1,20 @@
+delta_journal:
+  path: /delta/journal
+  methods: GET
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournal}
+  options:
+    expose: true
+
+delta_journal_clear:
+  path: /delta/journal/clear
+  methods: GET
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalClear}
+  options:
+    expose: true
+
+delta_rtt:
+  path: /delta/rtt
+  methods: GET
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalRtt}
+  options:
+    expose: true

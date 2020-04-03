@@ -1,0 +1,6 @@
+services:
+  evrinoma.delta8.fixtures.delta_settings:
+    class: Evrinoma\Delta8Bundle\Fixtures\DeltaFixtures
+    tags:
+      - { name: doctrine.fixture.orm }
+
