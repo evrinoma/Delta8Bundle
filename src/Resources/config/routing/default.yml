@@ -5,13 +5,6 @@ delta_journal:
   options:
     expose: true
 
-delta_journal_clear:
-  path: /delta/journal/clear
-  methods: GET
-  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalClear}
-  options:
-    expose: true
-
 delta_rtt:
   path: /delta/rtt
   methods: GET
