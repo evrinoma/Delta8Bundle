@@ -41,5 +41,15 @@ final class Delta8Controller extends AbstractController
 
         return $this->render('@EvrinomaDelta8/journal.html.twig', $event);
     }
+
+    /**
+     * @Route("/delta/tree", options={"expose"=true}, name="delta_tree")
+     */
+    public function deltaJournalTree()
+    {
+        $event = ['titleHeader' => 'Delta8 Administration', 'pageName' => 'Tree Delta8'];
+
+        return $this->render('@EvrinomaDelta8/tree.html.twig', $event);
+    }
 //endregion Public
 }

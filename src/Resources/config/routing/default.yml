@@ -11,3 +11,10 @@ delta_rtt:
   defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalRtt}
   options:
     expose: true
+
+delta_tree:
+  path: /delta/tree
+  methods: GET
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalTree}
+  options:
+    expose: true
