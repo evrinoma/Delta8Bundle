@@ -4,7 +4,6 @@
             <ag-grid-vue
                     style="width: 100%; height: 100%;"
                     class="ag-theme-balham"
-
                     :gridOptions="gridOptions"
                     @grid-ready="onGridReady"
                     :columnDefs="columnDefs"
@@ -15,13 +14,6 @@
                     :animateRows="true"
                     :rowData="rowData"
             >
-<!--            <ag-grid-vue style="width: 700px; height: 500px;"-->
-<!--                         class="ag-theme-balham"-->
-<!--                         :columnDefs="columnDefs"-->
-<!--                         :rowData="rowData"-->
-<!--                         rowSelection="multiple"-->
-<!--                         @grid-ready="onGridReady"-->
-<!--            >-->
             </ag-grid-vue>
         </div>
     </div>
@@ -33,7 +25,7 @@
     import {fetch} from 'whatwg-fetch';
 
     export default {
-        name: 'Tree',
+        name: 'AgTreeVue',
         components: {
             AgGridVue,
         },
@@ -92,22 +84,13 @@
              this.gridColumnApi = this.gridOptions.columnApi;
         },
         methods: {
+            loadRowData() {
+                fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/delta8/ag_data_tree')
+                    .then(result => result.json())
+                    .then(rowData => this.rowData = rowData);
+            },
             onGridReady(params) {
-                // const httpRequest = new XMLHttpRequest();
-                // const updateData = data => {
-                //     this.rowData = data;
-                // };
-
-                // httpRequest.open(
-                //     'GET',
-                //     'https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/olympicWinnersSmall.json'
-                // );
-                // httpRequest.send();
-                // httpRequest.onreadystatechange = () => {
-                //     if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-                //         updateData(JSON.parse(httpRequest.responseText));
-                //     }
-                // };
+                this.loadRowData();
             },
         },
     }
@@ -116,5 +99,4 @@
 <style lang="scss">
     @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
     @import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
-    /*@import "../../../../../../../../../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";*/
 </style>

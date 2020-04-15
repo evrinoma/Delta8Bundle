@@ -5,16 +5,23 @@ delta_journal:
   options:
     expose: true
 
-delta_rtt:
-  path: /delta/rtt
+delta_ag_simple:
+  path: /delta/ag_simple
   methods: GET
-  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalRtt}
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaAgSimple}
   options:
     expose: true
 
-delta_tree:
-  path: /delta/tree
+delta_ag_tree:
+  path: /delta/ag_tree
   methods: GET
-  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaJournalTree}
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaAgTree}
+  options:
+    expose: true
+
+delta_handson_tree:
+  path: /delta/handson_tree
+  methods: GET
+  defaults: { _controller: Evrinoma\Delta8Bundle\Controller\Delta8Controller::deltaHandsonTree}
   options:
     expose: true

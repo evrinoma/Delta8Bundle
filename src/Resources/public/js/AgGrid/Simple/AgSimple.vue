@@ -17,7 +17,7 @@
     import {fetch} from 'whatwg-fetch';
 
     export default {
-        name: 'Journal',
+        name: 'agSimpleVue',
         data() {
             return {
                 columnDefs: null,
@@ -29,7 +29,7 @@
         },
         methods: {
             loadRowData() {
-                fetch('https://api.myjson.com/bins/15psn9')
+                fetch(location.protocol + '//' + location.hostname + '/evrinoma/api/delta8/ag_data_simple')
                     .then(result => result.json())
                     .then(rowData => this.rowData = rowData);
             },
