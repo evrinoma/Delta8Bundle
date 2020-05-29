@@ -30,36 +30,5 @@ final class Delta8Controller extends AbstractController
 
         return $this->render('@EvrinomaDelta8/delta8.html.twig', $event);
     }
-
-
-    /**
-     * @Route("/delta/ag_simple", options={"expose"=true}, name="delta_ag_simple")
-     */
-    public function deltaAgSimple()
-    {
-        $event = ['titleHeader' => 'Delta8 Administration', 'pageName' => 'Ag Simple Delta8'];
-
-        return $this->render('@EvrinomaDelta8/ag_simple.html.twig', $event);
-    }
-
-    /**
-     * @Route("/delta/ag_tree", options={"expose"=true}, name="delta_ag_tree")
-     */
-    public function deltaAgTree()
-    {
-        $event = ['titleHeader' => 'Delta8 Administration', 'pageName' => 'AgTree Delta8'];
-
-        return $this->render('@EvrinomaDelta8/ag_tree.html.twig', $event);
-    }
-
-    /**
-     * @Route("/delta/handson_tree", options={"expose"=true}, name="delta_handson_tree")
-     */
-    public function deltaHandsonTree()
-    {
-        $event = ['titleHeader' => 'Delta8 Administration', 'pageName' => 'Handson Delta8'];
-
-        return $this->render('@EvrinomaDelta8/handson_tree.html.twig', $event);
-    }
 //endregion Public
 }

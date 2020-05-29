@@ -13,7 +13,6 @@ services:
     arguments:
       - '@jms_serializer'
       - '@request_stack'
-      - '@evrinoma.dto.factory'
       - '@evrinoma.delta8.journal.manager'
 
   Evrinoma\Delta8Bundle\Controller\Delta8ApiController:
