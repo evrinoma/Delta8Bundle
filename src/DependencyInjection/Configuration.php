@@ -10,7 +10,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * Class Configuration
  *
- * @package Evrinoma\LiveVideoBundle\DependencyInjection
+ * @package Evrinoma\Delta8Bundle\DependencyInjection
  */
 class Configuration implements ConfigurationInterface
 {
