@@ -16,7 +16,8 @@
     "require": {
         "php": "^7.1.3",
         "evrinoma/settings-bundle": "dev-master",
-        "evrinoma/utils-bundle": "dev-master"
+        "evrinoma/utils-bundle": "dev-master",
+        "evrinoma/menu-bundle": "dev-master"
     },
     "autoload": {
         "psr-4": {
