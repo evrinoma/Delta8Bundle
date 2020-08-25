@@ -1,11 +1,11 @@
 <?php
 
-namespace Evrinoma\Delta8Bundle\Voiter;
+namespace Evrinoma\Delta8Bundle\Voter;
 
 /**
  * Interface Delta8RoleInterface
  *
- * @package Evrinoma\Delta8Bundle\Voiter
+ * @package Evrinoma\Delta8Bundle\Voter
  */
 interface Delta8RoleInterface
 {
