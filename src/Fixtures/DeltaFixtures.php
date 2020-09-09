@@ -160,13 +160,42 @@ class DeltaFixtures extends Fixture
         $descriptionChild
             ->setName('MsSql')
             ->setInstance('DCSRV01')
-            ->setDescription('YARSALE_DATA');
+            ->setDescription('YARSALE_DATA')
+            ->setDate((new \DateTime())->createFromFormat('dmY', '01032020'));
+
 
         $description= new DescriptionDto();
         $description
             ->setName('MsSql')
             ->setInstance('DCSRV01')
             ->setDescription('YARSALE')
+            ->addChild($descriptionChild);
+
+        $service = new ServerDto();
+        $service
+            ->setPort('1433')
+            ->setHost('172.16.45.10')
+            ->setType('orm')
+            ->setDescription($description)
+            ->setRemote();
+
+        $settings = new Settings();
+        $settings->setData($service)->setType(ServiceDto::class);
+        $manager->persist($settings);
+
+        $descriptionChild = new DescriptionDto();
+        $descriptionChild
+            ->setName('MsSql')
+            ->setInstance('DCSRV01')
+            ->setDescription('KRASNOSELKUP_DATA')
+            ->setDate((new \DateTime())->createFromFormat('dmY', '08092020'));
+
+
+        $description= new DescriptionDto();
+        $description
+            ->setName('MsSql')
+            ->setInstance('DCSRV01')
+            ->setDescription('KRASNOSELKUP')
             ->addChild($descriptionChild);
 
         $service = new ServerDto();
