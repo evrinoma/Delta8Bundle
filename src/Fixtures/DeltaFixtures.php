@@ -15,16 +15,14 @@ use Evrinoma\SettingsBundle\Entity\Settings;
  *
  * @package Evrinoma\Delta8Bundle\Fixtures\DataFixtures
  */
-class DeltaFixtures extends Fixture
+class DeltaFixtures extends AbstractDeltaFixtures
 {
 
 //region SECTION: Public
     /**
-     * Load data fixtures with the passed EntityManager
-     *
-     * @param ObjectManager $manager
+     * 
      */
-    public function load(ObjectManager $manager)
+    public function create()
     {
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -50,7 +48,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -76,7 +74,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -102,7 +100,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -128,7 +126,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -154,7 +152,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -181,7 +179,7 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
         $descriptionChild = new DescriptionDto();
         $descriptionChild
@@ -208,9 +206,13 @@ class DeltaFixtures extends Fixture
 
         $settings = new Settings();
         $settings->setData($service)->setType(ServiceDto::class);
-        $manager->persist($settings);
+        $this->objectManager->persist($settings);
 
-        $manager->flush();
+        $this->objectManager->flush();
     }
 //endregion Public
+    public static function getGroups(): array
+    {
+        return ['DeltaFixtures', 'SearchSettingsFixtures'];
+    }
 }

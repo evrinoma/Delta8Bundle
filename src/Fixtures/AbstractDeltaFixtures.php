@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Evrinoma\EximBundle\Fixtures;
+namespace Evrinoma\Delta8Bundle\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
- * Class AbstractEximFixtures
+ * Class AbstractDeltaFixtures
  *
- * @package Evrinoma\EximBundle\DataFixtures
+ * @package Evrinoma\Delta8Bundle\Fixtures
  */
-abstract class AbstractEximFixtures extends Fixture implements EximFixtureInterface
+abstract class AbstractDeltaFixtures extends Fixture implements DeltaFixtureInterface
 {
 //region SECTION: Fields
     /**
@@ -32,6 +32,6 @@ abstract class AbstractEximFixtures extends Fixture implements EximFixtureInterf
 
         $this->create();
 
-       // $this->objectManager->flush();
+        $this->objectManager->flush();
     }
 }

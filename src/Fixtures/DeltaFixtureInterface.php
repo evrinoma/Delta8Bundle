@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Evrinoma\EximBundle\Fixtures;
+namespace Evrinoma\Delta8Bundle\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 
 /**
- * Interface EximFixtureInterface
+ * Interface DeltaFixtureInterface
  *
- * @package Evrinoma\EximBundle\DataFixtures
+ * @package Evrinoma\Delta8Bundle\Fixtures
  */
-interface EximFixtureInterface extends FixtureGroupInterface
+interface DeltaFixtureInterface extends FixtureGroupInterface
 {
     public function create();
 }
