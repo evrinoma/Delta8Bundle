@@ -14,6 +14,7 @@ services:
       - '@jms_serializer'
       - '@request_stack'
       - '@evrinoma.delta8.journal.manager'
+    autowire: true
 
   Evrinoma\Delta8Bundle\Controller\Delta8ApiController:
     alias: evrinoma.delta8.api.controller
