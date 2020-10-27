@@ -6,7 +6,6 @@ services:
   Evrinoma\Delta8Bundle\Controller\Delta8Controller:
     alias: evrinoma.delta8.controller
     public: true
-    deprecated:
 
   evrinoma.delta8.api.controller:
     class: Evrinoma\Delta8Bundle\Controller\Delta8ApiController
@@ -19,7 +18,6 @@ services:
   Evrinoma\Delta8Bundle\Controller\Delta8ApiController:
     alias: evrinoma.delta8.api.controller
     public: true
-    deprecated:
 
   evrinoma.delta8.journal.manager:
     class: Evrinoma\Delta8Bundle\Manager\JournalManager
@@ -31,7 +29,6 @@ services:
   Evrinoma\Delta8Bundle\Manager\JournalManager:
     alias: evrinoma.delta8.journal.manager
     public: true
-    deprecated:
 
   evrinoma.delta8.object_manager:
     class: Doctrine\Common\Persistence\ObjectManager
