@@ -63,7 +63,7 @@ final class Delta8ApiController extends AbstractApiController
      *      description="Select data by date value",
      *      items=@SWG\Items(
      *         type="string",
-     *         @Model(type=Evrinoma\Delta8Bundle\Form\Rest\DataFlowType::class)
+     *         ref=@Model(type=Evrinoma\Delta8Bundle\Form\Rest\DataFlowType::class)
      *     )
      * )
      * @SWG\Parameter(
