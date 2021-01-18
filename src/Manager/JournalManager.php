@@ -64,7 +64,7 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
     {
         parent::__construct($entityManager);
 
-        $this->entityManagerDelta = $registry->getEntityManager('delta8');
+        $this->entityManagerDelta = $registry->getManager('delta8');
         $this->connection         = $this->entityManagerDelta->getConnection();
 
         $this->settingsManager = $settingsManager;
