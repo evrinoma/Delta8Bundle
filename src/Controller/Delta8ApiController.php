@@ -7,7 +7,7 @@ use Evrinoma\UtilsBundle\Controller\AbstractApiController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use JMS\Serializer\SerializerInterface;
 use Nelmio\ApiDocBundle\Annotation\Model;
-use Swagger\Annotations as SWG;
+use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -55,27 +55,35 @@ final class Delta8ApiController extends AbstractApiController
 
     /**
      * @Rest\Get("/api/delta8/journal", options={"expose"=true}, name="api_delta_journal")
-     * @SWG\Get(tags={"delta"})
-     * @SWG\Parameter(
-     *      name="dataFlow",
-     *      in="query",
-     *      type="array",
-     *      description="Select data by date value",
-     *      items=@SWG\Items(
-     *         type="string",
-     *         ref=@Model(type=Evrinoma\Delta8Bundle\Form\Rest\DataFlowType::class)
+     * @OA\Get(
+     *      tags={"delta"},
+     *      @OA\Parameter(
+     *         name="dataFlow",
+     *         in="query",
+     *         description="Select data by date value",
+     *         required=true,
+     *         @OA\Schema(
+     *              type="array",
+     *              @OA\Items(
+     *                  type="string",
+     *                  ref=@Model(type=Evrinoma\Delta8Bundle\Form\Rest\DataFlowType::class),
+     *              ),
+     *          ),
+     *         style="form"
+     *     ),
+     *     @OA\Parameter(
+     *         in="query",
+     *         name="date",
+     *         required=true,
+     *         description="Select data by date value",
+     *         @OA\Schema(
+     *           type="string",
+     *           pattern="\d{1,2}-\d{1,2}-\d{4}",
+     *           default="13-05-2019",
+     *         )
      *     )
      * )
-     * @SWG\Parameter(
-     *     name="date",
-     *     in="query",
-     *     type="string",
-     *     format="date",
-     *     pattern="\d{1,2}-\d{1,2}-\d{4}",
-     *     default="13-05-2019",
-     *     description="Select data by date value"
-     * )
-     * @SWG\Response(response=200,description="Returns journal delta")
+     * @OA\Response(response=200,description="Returns journal delta")
      */
     public function journalAction()
     {
@@ -92,8 +100,8 @@ final class Delta8ApiController extends AbstractApiController
 
     /**
      * @Rest\Get("/api/delta8/object", options={"expose"=true}, name="api_delta_object")
-     * @SWG\Get(tags={"delta"})
-     * @SWG\Response(response=200,description="Returns delta objects")
+     * @OA\Get(tags={"delta"})
+     * @OA\Response(response=200,description="Returns delta objects")
      */
     public function journalDelptaObjectAction()
     {
