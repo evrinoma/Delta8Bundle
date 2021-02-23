@@ -31,7 +31,7 @@ services:
     public: true
 
   evrinoma.delta8.object_manager:
-    class: Doctrine\Common\Persistence\ObjectManager
+    class: Doctrine\Persistence\ObjectManager
 
   evrinoma.delta8.form.rest.dataflow:
     class: Evrinoma\Delta8Bundle\Form\Rest\DataFlowType
