@@ -9,7 +9,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Evrinoma\Delta8Bundle\Entity\DiscreetInfo;
 use Evrinoma\Delta8Bundle\Entity\Params;
-use Evrinoma\SettingsBundle\Dto\ApartDto\ServerDto;
+use Evrinoma\SettingsBundle\Std\ServerStd;
 use Evrinoma\SettingsBundle\Dto\ServiceDto;
 use Evrinoma\SettingsBundle\Entity\Settings;
 use Evrinoma\SettingsBundle\Manager\SettingsManagerInterface;
@@ -95,7 +95,7 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
     public function toSelect(array $settings)
     {
         $select = [];
-        /** @var ServerDto $setting */
+        /** @var ServerStd $setting */
         foreach ($settings as $setting) {
             $select[] = $setting->getDescription()->getDescription();
         }
@@ -161,7 +161,7 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
             /** @var DiscreetInfo[] */
             private $discreetInfo = [];
             /**
-             * @var ServerDto
+             * @var ServerStd
              */
             private $server;
             /**
@@ -271,19 +271,19 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
             }
 
             /**
-             * @return ServerDto
+             * @return ServerStd
              */
-            public function getServer(): ServerDto
+            public function getServer(): ServerStd
             {
                 return $this->server;
             }
 
             /**
-             * @param ServerDto $server
+             * @param ServerStd $server
              *
              * @return $this
              */
-            public function setServer(ServerDto $server): self
+            public function setServer(ServerStd $server): self
             {
                 $this->server = $server;
 
@@ -371,14 +371,14 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
     }
 
     /**
-     * @return ServerDto[]
+     * @return ServerStd[]
      */
     public function getSettings()
     {
         $settings = [];
         /** @var Settings $server */
         foreach ($this->settingsManager->toSettings(new ServiceDto()) as $server) {
-            /** @var ServerDto $setting */
+            /** @var ServerStd $setting */
             $setting = $server->getData();
             if ('orm' === $setting->getType() && $setting->getDescription() && $setting->getDescription()->getName() === 'MsSql') {
                 $settings[] = $setting;
