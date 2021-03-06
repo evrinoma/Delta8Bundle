@@ -11,6 +11,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class EvrinomaDelta8Bundle extends Bundle
 {
 
+    public const DELTA8_BUNDLE = 'delta8';
+
     public function build(ContainerBuilder $container)
     {
         parent::build($container);

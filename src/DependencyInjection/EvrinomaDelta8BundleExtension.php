@@ -3,6 +3,7 @@
 
 namespace Evrinoma\Delta8Bundle\DependencyInjection;
 
+use Evrinoma\Delta8Bundle\EvrinomaDelta8Bundle;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -55,7 +56,7 @@ class EvrinomaDelta8BundleExtension extends Extension
 //region SECTION: Getters/Setters
     public function getAlias()
     {
-        return 'delta8';
+        return EvrinomaDelta8Bundle::DELTA8_BUNDLE;
     }
 //endregion Getters/Setters
 }
