@@ -27,7 +27,6 @@ final class Delta8ApiController extends AbstractApiController
      * @var JournalManagerInterface
      */
     private $journalManager;
-    private $searchManager;
 //endregion Fields
 
 //region SECTION: Constructor
