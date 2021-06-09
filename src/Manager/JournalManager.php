@@ -86,7 +86,7 @@ class JournalManager extends AbstractEntityManager implements JournalManagerInte
         if ($dto->isValid()) {
             $this->dto = $dto;
         } else {
-            $this->setRestClientErrorBadRequest();
+            $this->setRestBadRequest();
         }
 
         return $this;
